@@ -8,7 +8,7 @@ RUN apk update && \
     rm /var/cache/apk/*
 
 ENV PCRE_VERSION      8.38
-ENV OPENRESTY_VERSION 1.9.7.3
+ENV OPENRESTY_VERSION 1.11.2.1
 ENV LUAROCKS_VERSION  2.3.0
 
 RUN cd /tmp && \
