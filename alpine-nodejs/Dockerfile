@@ -4,7 +4,7 @@ MAINTAINER TSUYOSHI TORII toritori0318
 
 RUN apk update && \
     apk add curl git openssh-client ca-certificates nodejs \
-            bash wget tar gzip rsync py-pip && \
+            bash wget tar gzip rsync py-pip make g++ && \
     rm /var/cache/apk/*
 
 # node cli
