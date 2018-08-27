@@ -1,11 +1,11 @@
-FROM gliderlabs/alpine:latest
+FROM node:8-alpine
 
 MAINTAINER TSUYOSHI TORII toritori0318
 
-RUN apk update && \
-    apk add curl git openssh-client ca-certificates nodejs \
-            bash wget tar gzip rsync py-pip make g++ && \
-    rm /var/cache/apk/*
+RUN apk update && apk --no-cache add --virtual native-deps \
+  g++ gcc libgcc libstdc++ linux-headers make python && \
+  npm install --quiet node-gyp -g &&\
+  npm install --quiet && \
+  apk del native-deps
 
-# node cli
 RUN npm install -g grunt-cli gulp
